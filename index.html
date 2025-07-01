@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enlight Group of Institutions - Application Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('bgimage.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.15;
+      animation: bgZoom 30s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgZoom {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 py-10">
+  <form class="max-w-5xl mx-auto bg-white/90 p-10 rounded-2xl shadow-2xl backdrop-blur-md fade-in ring-1 ring-gray-300 space-y-6" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <div class="flex justify-between items-center">
+      <h2 class="text-3xl font-bold text-red-600 animate-pulse">ENLIGHT GROUP OF INSTITUTIONS</h2>
+      <div>
+        <label class="block mb-1 font-semibold">Upload Passport Photo</label>
+        <input type="file" name="photo" accept="image/*" required class="block border rounded px-2 py-1">
+      </div>
+    </div>
+
+    <hr>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-4">Student Information</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input name="student_name" type="text" placeholder="Student Full Name" class="border p-2 rounded w-full" required>
+        <input name="dob" type="date" placeholder="Date of Birth" class="border p-2 rounded w-full" required>
+        <input name="father_name" type="text" placeholder="Father's Name" class="border p-2 rounded w-full" required>
+        <input name="father_mobile" type="tel" placeholder="Father's Mobile" class="border p-2 rounded w-full">
+        <input name="mother_name" type="text" placeholder="Mother's Name" class="border p-2 rounded w-full">
+        <input name="mother_mobile" type="tel" placeholder="Mother's Mobile" class="border p-2 rounded w-full">
+        <input name="nationality" type="text" placeholder="Nationality" class="border p-2 rounded w-full">
+        <input name="caste" type="text" placeholder="Caste" class="border p-2 rounded w-full">
+        <input name="sex" type="text" placeholder="Sex (M/F)" class="border p-2 rounded w-full">
+        <input name="citizenship" type="text" placeholder="Nationality Citizenship No." class="border p-2 rounded w-full">
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-4">Course Apply for</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <label><input type="checkbox" name="course" value="Nursing"> Nursing</label>
+        <label><input type="checkbox" name="course" value="Pharmacy"> Pharmacy</label>
+        <label><input type="checkbox" name="course" value="Paramedical"> Paramedical</label>
+        <label><input type="checkbox" name="course" value="Allied Science"> Allied Science</label>
+        <label><input type="checkbox" name="course" value="Physiotherapy"> Physiotherapy</label>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-4">Academic Information</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Last Exam Passed" class="border p-2 rounded w-full">
+        <input type="text" placeholder="Board Name" class="border p-2 rounded w-full">
+        <input type="text" placeholder="Year of Passing" class="border p-2 rounded w-full">
+        <input type="text" placeholder="Registration No." class="border p-2 rounded w-full">
+        <textarea placeholder="Name and address of last attended school" class="border p-2 rounded w-full"></textarea>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-4">Student Contact Information</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <textarea placeholder="Permanent Address" class="border p-2 rounded w-full"></textarea>
+        <textarea placeholder="Local Guardian Address" class="border p-2 rounded w-full"></textarea>
+        <input type="tel" placeholder="Student Mobile" class="border p-2 rounded w-full">
+        <input type="text" placeholder="Relation with Student" class="border p-2 rounded w-full">
+        <input type="tel" placeholder="Guardian Mobile" class="border p-2 rounded w-full">
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-4">Documents Required</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <label><input type="checkbox"> SSLC Marks Sheet / 'O' Level</label>
+        <label><input type="checkbox"> II PUC / 10+2 / PDC Marks Sheet / 'A' Level</label>
+        <label><input type="checkbox"> Transfer Certificate</label>
+        <label><input type="checkbox"> Conduct Certificate</label>
+        <label><input type="checkbox"> Migration Certificate</label>
+        <label><input type="checkbox"> 4 Recent Passport Photos</label>
+        <label><input type="checkbox"> Citizenship proof (Aadhar/Passport)</label>
+        <label><input type="checkbox"> Student Passport Visa (Foreign)</label>
+        <label><input type="checkbox"> Degree Certificates</label>
+        <label><input type="checkbox"> Income & Caste Certificate</label>
+        <label><input type="checkbox"> Diploma / Marksheets for Pc.B.Sc</label>
+        <label><input type="file" multiple class="border p-2 rounded"> Upload Scanned Documents</label>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-semibold mb-4">Declaration</h3>
+      <p class="text-sm italic">I / we pledge that all information provided is true. I / we agree to abide by the rules and agree not to claim fee refund in case of discontinuation. *Antiragging affidavit has to be submitted before joining.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <input type="text" placeholder="Place" class="border p-2 rounded">
+        <input type="date" placeholder="Date" class="border p-2 rounded">
+        <div class="col-span-2 flex justify-between mt-4">
+          <div class="text-center">
+            <label>Signature of Father / Guardian</label>
+            <div class="border-b h-10 w-40 mx-auto"></div>
+          </div>
+          <div class="text-center">
+            <label>Signature of Student</label>
+            <div class="border-b h-10 w-40 mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+
+  <script>
+    function validateForm() {
+      const name = document.forms[0]["student_name"].value;
+      if (!name) {
+        alert("Student name must be filled out");
+        return false;
+      }
+      return true;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      anime({
+        targets: '.fade-in',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        delay: anime.stagger(100),
+        duration: 800,
+        easing: 'easeOutQuad'
+      });
+    });
+  </script>
+</body>
+
+</html>
